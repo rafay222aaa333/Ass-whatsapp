@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'open',sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background:linear-gradient(#009688 0% ,#009688 130px,#d9dbd5 130px ,#d9dbd5 100%);
+
+        }
+.container{
+    position: relative;
+    width: 1396px;
+    max-width: 100%;
+    height: calc(100vh - 40px);
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgb(0,0,0,0,.06),0 2px 5px 0 rgba(0,0,0,0.06);
+    display: flex;
+}
+.leftside{
+ position: relative;
+    flex: 30%;
+    width: 100%;
+    height: 20vh;
+    background-color: #db0000;
+    border-right: 1px solid rgb(0,0,0,0.6);
+}
+.right{
+    position: relative;
+    flex: 69%;
+    /* background: #e5ddd5; */
+    background: #000000;
+}
+.right::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../background.jpg);
+    opacity: 0..06;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: #ededed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+
+
+}
+.userImage{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.nav_icons{
+    display: flex ;
+}
+.nav_icons li{
+    display: flex;
+list-style-type: none;
+cursor: pointer;
+color: #000000;
+font-size: 1.5em;
+margin-left: 22px;
+
+}
+.search_chat{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search_chat input
+{
+    height: 38px;
+width: 100%;
+outline: none;
+border: none;
+background: #fff;
+padding: 6px;
+border-radius: 30px;
+font-size: 14px;
+padding-left: 20px;
+/* padding : 10px; */
+margin-left: 20px;
+}
+.search_chat div input::placeholder{
+    color: #bbb;
+}
+.search_chat  ion-icon{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 1.2em;
+
+}
+.chat_list{
+    position: relative;
+    width: 600px;
+    height: calc(100%-110px);
+    background: #ffffff;
+    /* height:20vh; */
+    overflow-y: auto;
+
+} .block{
+    position: relative;
+    width: 100%;
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px; */
+    
+    border-bottom: 1px solid rgba(0,0,0,0.6);
+    cursor: pointer;
+
+
+}
+.imgbx{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow-y: hidden;
+    border-radius: 50%;
+}
+.details{
+    position: relative;
+    width: 100%;
+
+}
+.listHead{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 25px ;
+}
+ h4{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #111;
+    
+}
+.time p{
+    font-size: 0.75em;
+    color: #aaa;
+}
+.message_p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+    
+    .message_p p{
+        color: #6c6767;
+        display:-webkit-box;
+        -webkit-line-clamp: 1;
+        font-size: 0.9em;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+
+    }
+.message_p b{
+    background: #14f755;
+    color: #fff;
+
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+
+}
+.block.active{
+background-color: #ebebeb;
+}
+.block:hover{
+    background: #f5f5f5;
+}.imgText{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+
+}
+ h4{
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-left: 25px;
+}
+span{
+    margin-left: 10px;
+
+}
+.imgText h4 span{
+    font-size: 0.8em;
+    color: #555;
+}
+.chatbox{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 120px);
+    padding: 50px;
+    overflow: auto;
+
+}
+.message{
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+
+}
+.message .my_message{
+    position: relative;
+    right: 0;
+    text-align: right;
+    max-width: 65%;
+    padding: 12px;
+    background: #b3e68d;
+    border-radius: 10px;
+    font-size: 0.9em;
+
+}
+
+    </style>
+    <div class="container">
+<div class="leftside">
+    <!-- header? -->
+<div class="header">
+<div class="userImage"><img src="hrithik.jpg" class="cover"></div>
+<div class="nav_icons">
+    <ul style="display: inline-flex;">
+    <li><ion-icon name="scan-circle-outline"></ion-icon></li>
+    <li><ion-icon name="chatbox-outline"></ion-icon></li>
+    <li><ion-icon name="ellipsis-vertical-outline"></ion-icon></li>
+    </ul>
+</div>
+</div>
+
+<!-- ?/seacrh bar -->
+<div class="search_chat">
+    <input type="text" placeholder="seacrh or start new chat">
+    <ion-icon name="search-outline"></ion-icon>
+</div>
+<!-- //chat list//? -->
+
+<div>
+    <div class="chat_list">
+    <div class="block active">
+    <div class="imgbx">
+    <img src="sharukh.jpg" class="cover">
+    </div>
+    <div class="details">
+        <div class="listHead">
+            <h4>Sharukh Khan</h4>
+            <p class="time">10:44</p>
+        </div>
+        <div class="message_p">
+            <p>Meri movie jawan dakhi </p>
+<b>2</b>
+        </div>
+    </div>
+ </div>
+</div>
+
+
+<!-- second -->
+<div class="block">
+    <div class="imgbx">
+    <img src="salmana 2.jpg" class="cover">
+    </div>
+    <div class="details">
+        <div class="listHead">
+            <h4>Salman Khan</h4>
+            <p class="time">9:34</p>
+        </div>
+        <div class="message_p">
+            <p>Abdul rafay mujhe apni bank details sent kro</p>
+   
+    
+        </div>
+        </div>
+    </div>
+</div>
+<!-- third
+ -->
+<div class="block">
+    <div class="imgbx">
+    <img src="amir two.webp" class="cover">
+    </div>
+    <div class="details">
+        <div class="listHead">
+            <h4>Amir khan</h4>
+            <p class="time">10:44</p>
+        </div>
+        <div class="message_p">
+            <p>yar rafay Hrithik Roshan k number sent krna </p>
+   
+    
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<div class="right">
+<div class="header">
+    <div class="imgText">
+    <div class="userImage"><img src="icon2.png" class="cover">
+    </div>
+    <h4>Hrithik Roshan</h4> <br>
+    <br>
+    <span>online</span>
+</div>
+    <div class="nav_icons">
+        <ul style="display: inline-flex;">
+        <li>    <ion-icon name="search-outline"></ion-icon></li>
+        <li><ion-icon name="chatbox-outline"></ion-icon></li>
+        <li><ion-icon name="ellipsis-vertical-outline"></ion-icon></li>
+        </ul>
+    </div>
+   
+    <!-- chat boxx -->
+    <!-- <div class="chatBox">
+    <div class="message my_message">
+        <p>Hi<br> <span>12:12 pm</span></p>
+    </div>
+    <div class="message frnd_message">
+        <p>Hi<br> <span>12:12 pm</span></p>
+   -->
+        </div>
+    </div>
+</div>
+</div>
+
+    </div>
+</body>
+</html>
